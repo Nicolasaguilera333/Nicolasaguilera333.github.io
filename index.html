@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <title>Proyecto COTIZAN2</title>
   </head>
   <body>
@@ -12,7 +18,7 @@
       <header class="header">
         <nav class="nav">
           <div class="logo">
-            <img src="/public/images/dragorasmalllogo.png" alt="" />
+            <img src="/public/images/smalllogo.png" alt="" />
             <p>COTIZAN2</p>
           </div>
           <div id="navdata" class="navdata">
@@ -31,12 +37,16 @@
 
         <!-- articulo inicio -->
         <article class="inicio">
-          <div class="inicioContainer">
-            <div class="inicioTitulo">
-              <h3>
-                Encuentra los mejores precios automotrices al mejor precio
-              </h3>
-              <button>Cotiza Aquí</button>
+          <div class="jumbo jumbo-dark">
+            <div class="inicioContainer">
+              <div class="inicioTitulo">
+                <h3>
+                  Encuentra los mejores precios automotrices al mejor precio
+                </h3>
+                <button type="button" class="btn btn-secondary">
+                  Cotiza Aquí
+                </button>
+              </div>
             </div>
           </div>
         </article>
@@ -78,7 +88,9 @@
             </div>
           </div>
           <div class="marcasTextoContainer">
-            <p style="margin: 0px">Cotiza tu marca preferida</p>
+            <button type="button" class="btn btn-light">
+              Cotiza tu marca preferida
+            </button>
           </div>
         </article>
       </section>
