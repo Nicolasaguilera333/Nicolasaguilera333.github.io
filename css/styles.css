@@ -7,50 +7,120 @@ body {
   flex-direction: column;
   min-height: 100vh;
   text-align: center;
+  background: linear-gradient(-6deg, #668, black) !important;
 }
 
 /* Estructura de la página */
 .layout {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  margin: 0px 50px;
+  grid-template-areas:
+    "header header header header"
+    "content content content lateral"
+    "footer footer footer footer";
+  grid-template-rows: 75px auto 150px;
+  grid-template-columns: 28% 28% 28% 16%;
 }
 
 header {
-  background-color: #343a40;
+  grid-area: header;
+  background-color: #000000;
   align-content: center;
+  color: white;
+}
+
+.container-fluid button {
+  float: right;
+}
+
+.custom-dropdown {
+  display: none;
+  position: absolute;
+  top: 50px; /* Ajusta según la posición del botón */
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.custom-dropdown ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-dropdown ul li {
+  padding: 8px 12px;
+}
+
+.custom-dropdown ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.custom-dropdown ul li:hover {
+  background-color: #f1f1f1;
 }
 
 nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: #000000;
+  margin: 0px 0px;
+}
+
+.navdata {
+  width: 500px;
 }
 
 ul {
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .logo {
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+.logo h3 {
+  margin-left: 13px;
+  margin-top: 11px;
+  font-family: fantasy;
 }
 
 .logo img {
-  width: 75px;
-  height: 50px;
+  width: 123px;
+  height: 59px;
 }
 
 .content {
-  flex: 1; /* Esto hace que el contenido principal ocupe todo el espacio disponible */
+  grid-area: content;
+  background: linear-gradient(14deg, black, gray);
+  min-height: 125vh;
+}
+
+.aside {
+  grid-area: lateral;
+  background-color: #155724;
+}
+
+.dataContainer {
+  margin-bottom: 15px;
+}
+
+section {
+  border-radius: 1%;
 }
 
 .jumbo {
   width: fit-content;
   height: fit-content;
   padding: 20px;
-  margin: 50px auto 0 auto;
+  margin: 0 auto;
   background-color: #f8f9fa; /* Color de fondo suave */
   border-radius: 0.5rem; /* Bordes ligeramente redondeados */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
@@ -87,6 +157,9 @@ ul {
 .marcas {
   background-color: #343a40;
   height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .marcasContainer {
@@ -95,6 +168,8 @@ ul {
   flex-direction: row;
   height: 185px;
   padding-top: 20px;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .marcasTextoContainer {
@@ -104,7 +179,7 @@ ul {
 }
 
 .marcaContainer {
-  margin: 5px -3px 5px 38px;
+  margin: 5px 23px;
   padding: 10px;
   text-align: center;
   width: 129px;
@@ -167,6 +242,16 @@ ul {
   margin: 20px 0px 35px;
 }
 
+.cotizadorContainer {
+  background: gainsboro;
+  border-radius: 8px;
+  padding: 0px;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 80vh;
+}
+
 .cotizadorFormContainer {
   text-align: left;
   margin: 0 auto;
@@ -187,6 +272,7 @@ ul {
 }
 
 .footer {
+  grid-area: footer;
   background-color: #000000;
   text-align: center;
   padding: 1em;
