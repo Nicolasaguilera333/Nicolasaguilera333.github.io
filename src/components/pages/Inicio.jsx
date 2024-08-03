@@ -13,7 +13,7 @@ export const Inicio = () => {
           <div className="inicioContainer">
             <div className="inicioTitulo">
               <h3>
-                Encuentra los aaamejores precios automotrices al mejor precio
+                Encuentra los mejores repuestos automotrices al mejor precio
               </h3>
               <button type="button" className="btn btn-secondary">
                 Cotiza Aquí
