@@ -61,7 +61,7 @@ export const Nav = () => {
               <NavLink to="/cotizador">Cotizador</NavLink>
             </li>
             <li>
-              <NavLink to="/articulos">Articulos</NavLink>
+              <NavLink to="/articulo">Articulos</NavLink>
             </li>
           </ul>
         </div>
