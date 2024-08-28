@@ -5,7 +5,8 @@ import { PieceRelationships } from "./PieceRelationships";
 export const CreateCompatibilityForm = ({ onSave }) => {
   const [marcaVehiculo, setMarcaVehiculo] = useState("");
   const [modeloVehiculo, setModeloVehiculo] = useState("");
-  const [anoVehiculo, setAnoVehiculo] = useState("");
+  const [anoInicio, setAnoInicio] = useState("");
+  const [anoFin, setAnoFin] = useState("");
   const { pieceId } = useParams(); // Obtén pieceId desde la URL
 
   console.log(pieceId); // Esto debería mostrar el pieceId en la consola
@@ -24,7 +25,8 @@ export const CreateCompatibilityForm = ({ onSave }) => {
           body: JSON.stringify({
             marcaVehiculo,
             modeloVehiculo,
-            anoVehiculo,
+            anoInicio,
+            anoFin,
           }),
         }
       );
@@ -69,13 +71,28 @@ export const CreateCompatibilityForm = ({ onSave }) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="anoVehiculo">Año del Vehículo</label>
+          <label htmlFor="anoInicio">Año de Inicio</label>
           <input
             type="number"
-            id="anoVehiculo"
-            value={anoVehiculo}
-            onChange={(e) => setAnoVehiculo(e.target.value)}
+            id="anoInicio"
+            value={anoInicio}
+            onChange={(e) => setAnoInicio(e.target.value)}
             className="form-control"
+            min="1900" // Ajusta el valor mínimo según sea necesario
+            max="2100" // Ajusta el valor máximo según sea necesario
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="anoFin">Año de Fin</label>
+          <input
+            type="number"
+            id="anoFin"
+            value={anoFin}
+            onChange={(e) => setAnoFin(e.target.value)}
+            className="form-control"
+            min="1900" // Ajusta el valor mínimo según sea necesario
+            max="2100" // Ajusta el valor máximo según sea necesario
             required
           />
         </div>

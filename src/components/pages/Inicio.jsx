@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import ExampleLogo from "../../assets/images/dragorasmalllogo.png";
 import heroImage from "../../assets/images/heroimage.jpg";
+import useAuth from "../../hooks/useAuth";
 
 export const Inicio = () => {
+  const { auth, setAuth } = useAuth();
   const [distributors, setDistributors] = useState([]);
-  console.log(distributors);
   useEffect(() => {
     const fetchDistributors = async () => {
       try {
@@ -46,7 +47,7 @@ export const Inicio = () => {
       <article className="marcas">
         <div className="marcasContainer">
           {distributors.map((distributor) => (
-            <div className="marcaContainer">
+            <div className="marcaContainer" key={distributor.ID_Distribuidor}>
               <img src={ExampleLogo} alt="" />
               <p>{distributor.Nombre}</p>
             </div>

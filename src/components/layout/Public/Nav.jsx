@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import smallLogo from "../../assets/images/smalllogo.png";
+import smallLogo from "../../../assets/images/smalllogo.png";
 import { NavLink } from "react-router-dom";
 
 export const Nav = () => {
@@ -36,7 +36,26 @@ export const Nav = () => {
         <img src={smallLogo} alt="" />
         <h3>COTIZAN2</h3>
       </div>
-      <div id="navdata" className="navdata">
+      <div className="navbarContent">
+        <ul>
+          <li>
+            <NavLink to="/inicio">Inicio</NavLink>
+          </li>
+          <li>
+            <NavLink to="/cotizador">Cotizador</NavLink>
+          </li>
+          <li>
+            <NavLink to="/cotizador">Distribuidores</NavLink>
+          </li>
+          <li>
+            <NavLink to="/users/login">Iniciar Sesión</NavLink>
+          </li>
+          <li>
+            <NavLink to="/users/register">Registro</NavLink>
+          </li>
+        </ul>
+      </div>
+      {/* <div id="navdata" className="navdata">
         <div className="container-fluid">
           <button
             id="dropdownButton"
@@ -48,7 +67,7 @@ export const Nav = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
         </div>
-        <div
+         <div
           id="customDropdown"
           className="custom-dropdown"
           style={{ display: isDropdownOpen ? "block" : "none" }}
@@ -64,8 +83,8 @@ export const Nav = () => {
               <NavLink to="/articulo">Articulos</NavLink>
             </li>
           </ul>
-        </div>
-      </div>
+        </div> 
+      </div> */}
     </nav>
   );
 };

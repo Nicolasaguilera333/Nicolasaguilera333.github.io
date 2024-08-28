@@ -13,7 +13,7 @@ body {
 /* Estructura de la página */
 .layout {
   display: grid;
-  margin: 0px 122px;
+  margin: 0px 0px;
   grid-template-areas:
     "header header header header"
     "content content content lateral"
@@ -72,12 +72,19 @@ nav {
   margin: 0px 0px;
 }
 
-.navdata {
-  width: 500px;
+.navbarContent {
+  width: 700px;
+  color: red;
 }
 
-ul {
-  flex-direction: column;
+.navbarContent ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navdata {
+  width: 500px;
 }
 
 .logo {
