@@ -32,26 +32,28 @@ export const PiezaService = () => {
   const pieza = piezaData?.pieza;
 
   return (
-    <div>
-      <h2>Detalle de la Pieza</h2>
-      {pieza ? (
-        <div>
-          <p>
-            <strong>ID:</strong> {pieza.ID_Pieza}
-          </p>
-          <p>
-            <strong>Nombre:</strong> {pieza.Nombre_Pieza}
-          </p>
-          <p>
-            <strong>Categoría:</strong> {pieza.Nombre_Categoria}
-          </p>
-          <p>
-            <strong>Marca:</strong> {pieza.Nombre_Marca}
-          </p>
-        </div>
-      ) : (
-        <p>Pieza no encontrada.</p>
-      )}
-    </div>
+    <article className="background">
+      <div className="jumbo jumbo-dark">
+        <h2>Detalle de la Pieza</h2>
+        {pieza ? (
+          <div>
+            <p>
+              <strong>ID:</strong> {pieza.ID_Pieza}
+            </p>
+            <p>
+              <strong>Nombre:</strong> {pieza.Nombre_Pieza}
+            </p>
+            <p>
+              <strong>Categoría:</strong> {pieza.Nombre_Categoria}
+            </p>
+            <p>
+              <strong>Marca:</strong> {pieza.Nombre_Marca}
+            </p>
+          </div>
+        ) : (
+          <p>Pieza no encontrada.</p>
+        )}
+      </div>
+    </article>
   );
 };

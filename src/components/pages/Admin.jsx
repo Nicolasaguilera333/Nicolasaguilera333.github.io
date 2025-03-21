@@ -99,89 +99,99 @@ export const Admin = () => {
   };
 
   return (
-    <div>
-      <h1>Distribuidores</h1>
-      <center>
-        <table>
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {distributors.map((distributor) => (
-              <tr key={distributor.ID_Distribuidor}>
-                <td>
-                  <Link to={`/distributor/${distributor.ID_Distribuidor}`}>
-                    {distributor.Nombre}
-                  </Link>
-                </td>
-                <td>
-                  <button
-                    className="btn btn-danger btn-sm"
-                    onClick={() => handleDelete(distributor.ID_Distribuidor)}
-                  >
-                    Eliminar
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </center>
+    <>
+      <article className="background">
+        <div className="jumbo">
+          <h1>Distribuidores</h1>
+          <center>
+            <table>
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {distributors.map((distributor) => (
+                  <tr key={distributor.ID_Distribuidor}>
+                    <td>
+                      <Link
+                        to={`/admin/distributor/${distributor.ID_Distribuidor}`}
+                      >
+                        {distributor.Nombre}
+                      </Link>
+                    </td>
+                    <td>
+                      <button
+                        className="btn btn-danger btn-sm"
+                        onClick={() =>
+                          handleDelete(distributor.ID_Distribuidor)
+                        }
+                      >
+                        Eliminar
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </center>
+        </div>
+      </article>
 
-      <h2>Agregar Nuevo Distribuidor</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Nombre:
-            <input
-              type="text"
-              name="nombre"
-              value={formData.nombre}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Dirección:
-            <input
-              type="text"
-              name="direccion"
-              value={formData.direccion}
-              onChange={handleInputChange}
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Teléfono:
-            <input
-              type="text"
-              name="contacto"
-              value={formData.contacto}
-              onChange={handleInputChange}
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Email:
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-            />
-          </label>
-        </div>
-        <button type="submit">Agregar Distribuidor</button>
-      </form>
+      <article className="background">
+        <h2>Agregar Nuevo Distribuidor</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>
+              Nombre:
+              <input
+                type="text"
+                name="nombre"
+                value={formData.nombre}
+                onChange={handleInputChange}
+                required
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              Dirección:
+              <input
+                type="text"
+                name="direccion"
+                value={formData.direccion}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              Teléfono:
+              <input
+                type="text"
+                name="contacto"
+                value={formData.contacto}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              Email:
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
+          <button type="submit">Agregar Distribuidor</button>
+        </form>
 
-      {error && <p>{error}</p>}
-    </div>
+        {error && <p>{error}</p>}
+      </article>
+    </>
   );
 };

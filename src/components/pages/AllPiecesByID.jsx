@@ -90,14 +90,16 @@ export const AllPiecesByID = ({ distributorId }) => {
     // Verificar que se haya encontrado el objeto
     if (piece) {
       // Navegar a la ruta de edición, pasando el objeto como estado
-      navigate(`/edit-piece/${pieceId}`, { state: { piece, distributorId } });
+      navigate(`/admin/edit-piece/${pieceId}`, {
+        state: { piece, distributorId },
+      });
     } else {
       alert("Pieza no encontrada.");
     }
   };
 
   const handleCreateRelation = (pieceId) => {
-    navigate(`/create-compatibility/${pieceId}`); // Usa navigate en lugar de history.push
+    navigate(`/admin/create-compatibility/${pieceId}`); // Usa navigate en lugar de history.push
   };
 
   const handleSort = (key) => {

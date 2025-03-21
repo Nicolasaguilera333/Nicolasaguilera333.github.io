@@ -13,8 +13,7 @@ export const AdminLayout = () => {
         {/* LAYOUT */}
         <Pheader />
         <section id="content" className="content">
-          {auth.rol == "role_admin" ? <Outlet /> : <Navigate to="/inicio" />}
-          <Outlet />
+          {auth.role == "role_admin" ? <Outlet /> : <Navigate to="/inicio" />}
         </section>
       </>
     );

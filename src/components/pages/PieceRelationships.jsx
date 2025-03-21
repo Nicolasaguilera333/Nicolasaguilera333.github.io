@@ -10,6 +10,7 @@ export const PieceRelationships = ({ pieceId }) => {
     Modelo_Vehículo: { direction: "asc" },
     Año_Vehículo: { direction: "asc" },
   });
+  console.log(relationships);
 
   useEffect(() => {
     const fetchRelationships = async () => {
@@ -161,7 +162,9 @@ export const PieceRelationships = ({ pieceId }) => {
                 <td>{relationship.ID_Compatibilidad}</td>
                 <td>{relationship.Marca_Vehículo}</td>
                 <td>{relationship.Modelo_Vehículo}</td>
-                <td>{relationship.Año_Vehículo}</td>
+                <td>
+                  {relationship.Año_Inicio} - {relationship.Año_Fin}
+                </td>
                 <td>
                   <button
                     className="btn btn-danger btn-sm"

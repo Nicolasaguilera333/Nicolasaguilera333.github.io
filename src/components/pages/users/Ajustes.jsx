@@ -42,7 +42,7 @@ export const Ajustes = () => {
     }
     //subida de imagenes
     const fileInput = document.querySelector("#file");
-    if (response.status == "succes" && fileInput.files[0]) {
+    if (response.status == "success" && fileInput.files[0]) {
       const formData = new FormData();
       formData.append("file0", fileInput.files[0]);
 
@@ -55,7 +55,7 @@ export const Ajustes = () => {
         },
       });
       const uploadData = await uploadRequest.json();
-      if (uploadData.status == "succes" && uploadData.user) {
+      if (uploadData.status == "success" && uploadData.user) {
         delete uploadData.user.password;
         setRegistered("registered");
         setMessage(uploadData);

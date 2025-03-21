@@ -53,74 +53,76 @@ export const EditPiece = () => {
   };
 
   return (
-    <div>
-      <h2>Editar Pieza</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="Pieza">Nombre de la Pieza</label>
+    <article className="background">
+      <div className="jumbo jumbo-dark">
+        <h2>Editar Pieza</h2>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="Pieza">Nombre de la Pieza</label>
+            <input
+              type="text"
+              id="Pieza"
+              name="Pieza"
+              value={editedPiece.Pieza || ""}
+              onChange={handleChange}
+              className="form-control"
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="Categoria">Categoría</label>
+            <input
+              type="text"
+              id="Categoria"
+              name="Categoria"
+              value={editedPiece.Categoria || ""}
+              onChange={handleChange}
+              className="form-control"
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="Marca">Marca</label>
+            <input
+              type="text"
+              id="Marca"
+              name="Marca"
+              value={editedPiece.Marca || ""}
+              onChange={handleChange}
+              className="form-control"
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="Cantidad">Cantidad</label>
+            <input
+              type="number"
+              id="Cantidad"
+              name="Cantidad"
+              value={editedPiece.Cantidad || ""}
+              onChange={handleChange}
+              className="form-control"
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="Precio">Precio</label>
+            <input
+              type="number"
+              id="Precio"
+              name="Precio"
+              value={editedPiece.Precio || ""}
+              onChange={handleChange}
+              className="form-control"
+            />
+          </div>
           <input
-            type="text"
-            id="Pieza"
-            name="Pieza"
-            value={editedPiece.Pieza || ""}
-            onChange={handleChange}
-            className="form-control"
+            type="hidden"
+            name="idDistribuidor"
+            value={editedPiece.idDistribuidor || ""}
           />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="Categoria">Categoría</label>
-          <input
-            type="text"
-            id="Categoria"
-            name="Categoria"
-            value={editedPiece.Categoria || ""}
-            onChange={handleChange}
-            className="form-control"
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="Marca">Marca</label>
-          <input
-            type="text"
-            id="Marca"
-            name="Marca"
-            value={editedPiece.Marca || ""}
-            onChange={handleChange}
-            className="form-control"
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="Cantidad">Cantidad</label>
-          <input
-            type="number"
-            id="Cantidad"
-            name="Cantidad"
-            value={editedPiece.Cantidad || ""}
-            onChange={handleChange}
-            className="form-control"
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="Precio">Precio</label>
-          <input
-            type="number"
-            id="Precio"
-            name="Precio"
-            value={editedPiece.Precio || ""}
-            onChange={handleChange}
-            className="form-control"
-          />
-        </div>
-        <input
-          type="hidden"
-          name="idDistribuidor"
-          value={editedPiece.idDistribuidor || ""}
-        />
-        <button type="submit" className="btn btn-primary">
-          Guardar Cambios
-        </button>
-      </form>
-    </div>
+          <button type="submit" className="btn btn-primary">
+            Guardar Cambios
+          </button>
+        </form>
+      </div>
+    </article>
   );
 };

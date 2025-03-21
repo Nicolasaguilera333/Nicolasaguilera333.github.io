@@ -44,7 +44,7 @@ export const Inicio = () => {
         </div>
       </article>
 
-      <article className="marcas">
+      <article className="marcas background">
         <div className="marcasContainer">
           {distributors.map((distributor) => (
             <div className="marcaContainer" key={distributor.ID_Distribuidor}>

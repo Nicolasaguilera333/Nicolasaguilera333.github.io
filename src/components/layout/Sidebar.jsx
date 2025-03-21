@@ -4,7 +4,7 @@ import socioImage from "../../assets/images/socioimage.jpg";
 
 export const Sidebar = () => {
   return (
-    <section className="aside">
+    <section className="aside background">
       <div className="asideContainer">
         <h4>PATROCINIO</h4>
         <div className="dataContainer">

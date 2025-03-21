@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { AddPieceForm } from "./AddPieces";
-import { AllPiecesByID } from "./AllPiecesByID";
-import { Global } from "../../helpers/Global";
+import { AddPieceForm } from "../AddPieces";
+import { AllPiecesByID } from "../AllPiecesByID";
+import { Global } from "../../../helpers/Global";
 
-export const Distri = () => {
+export const AdminDistri = () => {
   const { id } = useParams(); // Obtén el ID del distribuidor de la URL
   const [distributor, setDistributor] = useState(null); // Estado para almacenar el distribuidor
   const [error, setError] = useState(null); // Estado para manejar errores

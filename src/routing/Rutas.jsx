@@ -20,6 +20,8 @@ import { AdminLayout } from "../components/layout/Private/AdminLayout";
 import { Logout } from "../components/pages/users/Logout";
 import { Ajustes } from "../components/pages/users/Ajustes";
 import { Profile } from "../components/pages/users/Profile";
+import { AdminDistri } from "../components/pages/admin/AdminDistri";
+import { Resultados } from "../components/pages/Resultados";
 
 export const Rutas = () => {
   return (
@@ -34,6 +36,7 @@ export const Rutas = () => {
             <Route path="cotizador" element={<Cotizador />} />
             <Route path="articulo" element={<Articulo />} />
             <Route path="distributor/:id" element={<Distri />} />
+            <Route path="resultados" element={<Resultados />} />
           </Route>
           <Route path="/users" element={<PublicLayout />}>
             <Route index element={<Login />} />
@@ -54,6 +57,7 @@ export const Rutas = () => {
             />
             <Route path="edit-piece/:pieceId" element={<EditPiece />} />
             <Route path="piece/:id" element={<PiezaService />} />
+            <Route path="distributor/:id" element={<AdminDistri />} />
           </Route>
           {/* RUTA 404 */}
           <Route path="*" element={<NormalLayout />}>

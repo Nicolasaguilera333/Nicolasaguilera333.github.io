@@ -54,7 +54,7 @@ export const Pnav = () => {
             {/* <NavLink to={`/account/profile/${auth.id}`}>
               <img src={avatar} className="avatarImage" alt="" />
             </NavLink> */}
-            <NavLink to={"/account/profile/" + auth._id}>
+            <NavLink to={"/account/profile/" + auth.id}>
               {auth.image != "default.png" && (
                 <span className="bn39span">
                   <img
@@ -77,8 +77,8 @@ export const Pnav = () => {
                   />
                 </span>
               )}
+              {auth.name}
             </NavLink>
-            <NavLink to={`/account/profile/${auth.id}`}>{auth.name}</NavLink>
           </li>
           <li>
             <NavLink to="/account/configuration">Ajustes</NavLink>

@@ -45,62 +45,64 @@ export const CreateCompatibilityForm = ({ onSave }) => {
   };
 
   return (
-    <div>
-      <h2>Crear Relación de Compatibilidad</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="marcaVehiculo">Marca del Vehículo</label>
-          <input
-            type="text"
-            id="marcaVehiculo"
-            value={marcaVehiculo}
-            onChange={(e) => setMarcaVehiculo(e.target.value)}
-            className="form-control"
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="modeloVehiculo">Modelo del Vehículo</label>
-          <input
-            type="text"
-            id="modeloVehiculo"
-            value={modeloVehiculo}
-            onChange={(e) => setModeloVehiculo(e.target.value)}
-            className="form-control"
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="anoInicio">Año de Inicio</label>
-          <input
-            type="number"
-            id="anoInicio"
-            value={anoInicio}
-            onChange={(e) => setAnoInicio(e.target.value)}
-            className="form-control"
-            min="1900" // Ajusta el valor mínimo según sea necesario
-            max="2100" // Ajusta el valor máximo según sea necesario
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="anoFin">Año de Fin</label>
-          <input
-            type="number"
-            id="anoFin"
-            value={anoFin}
-            onChange={(e) => setAnoFin(e.target.value)}
-            className="form-control"
-            min="1900" // Ajusta el valor mínimo según sea necesario
-            max="2100" // Ajusta el valor máximo según sea necesario
-            required
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Guardar
-        </button>
-      </form>
-      <PieceRelationships pieceId={pieceId} />
-    </div>
+    <article className="background">
+      <div className="jumbo jumbo-dark">
+        <h2>Crear Relación de Compatibilidad</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="marcaVehiculo">Marca del Vehículo</label>
+            <input
+              type="text"
+              id="marcaVehiculo"
+              value={marcaVehiculo}
+              onChange={(e) => setMarcaVehiculo(e.target.value)}
+              className="form-control"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="modeloVehiculo">Modelo del Vehículo</label>
+            <input
+              type="text"
+              id="modeloVehiculo"
+              value={modeloVehiculo}
+              onChange={(e) => setModeloVehiculo(e.target.value)}
+              className="form-control"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="anoInicio">Año de Inicio</label>
+            <input
+              type="number"
+              id="anoInicio"
+              value={anoInicio}
+              onChange={(e) => setAnoInicio(e.target.value)}
+              className="form-control"
+              min="1900" // Ajusta el valor mínimo según sea necesario
+              max="2100" // Ajusta el valor máximo según sea necesario
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="anoFin">Año de Fin</label>
+            <input
+              type="number"
+              id="anoFin"
+              value={anoFin}
+              onChange={(e) => setAnoFin(e.target.value)}
+              className="form-control"
+              min="1900" // Ajusta el valor mínimo según sea necesario
+              max="2100" // Ajusta el valor máximo según sea necesario
+              required
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Guardar
+          </button>
+        </form>
+        <PieceRelationships pieceId={pieceId} />
+      </div>
+    </article>
   );
 };
