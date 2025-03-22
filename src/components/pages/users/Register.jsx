@@ -14,7 +14,7 @@ export const Register = () => {
     //Guardar usuario en el backend
     const { datos } = await Peticion(Global.url + "register", "POST", newUser);
 
-    if (datos.status == "succes") {
+    if (datos.status == "success") {
       setRegistered("registered");
       setMessage(datos);
     } else {
