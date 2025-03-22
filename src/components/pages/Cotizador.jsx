@@ -18,7 +18,7 @@ export const Cotizador = () => {
       try {
         const response = await fetch("http://localhost:3000/api/categorias");
         const data = await response.json();
-        setCategories(data.categorias);
+        setCategories(data.categorías);
       } catch (error) {
         console.error("Error al obtener categorías:", error);
       }

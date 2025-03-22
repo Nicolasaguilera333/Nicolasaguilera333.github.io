@@ -29,25 +29,36 @@ export const Resultados = () => {
     <article className="background">
       <div className="jumbo resultadosContainer">
         <h3>Resultados de la Búsqueda</h3>
+        <p className="busquedaMin">
+          Resultados de la busqueda:
+          {`        ${categoria} 
+          ${marca} 
+          ${modelo} 
+          ${anio}`}
+        </p>
         <div className="dataContainer">
+          {
+            console.log(piezas) // Verifica si ya hay duplicados
+          }
           {piezas.length > 0 ? (
-            piezas.map((pieza) => (
-              <div key={pieza.ID_Pieza} className="jumbo-dark">
-                <h4>{pieza.Nombre}</h4>
-                {/* Suponiendo que tienes una propiedad `imagen` en cada pieza */}
-                {/* <img
-              src={pieza.imagen || "default-image-url"}
-              alt={pieza.Nombre}
-              className="pieza-imagen"
-            /> */}
-
-                <p>Nombre Pieza: {pieza.Nombre_Pieza || "No disponible"}</p>
-                <p>Marca: {pieza.Nombre_Marca || "No disponible"}</p>
-                <p>
-                  Distribuidor: {pieza.Nombre_Distribuidor || "No disponible"}
-                </p>
-              </div>
-            ))
+            <div className="cuadricula-container">
+              {piezas.map((pieza) => (
+                <div key={pieza.ID_Pieza} className="cuadricula">
+                  <h4>{pieza.Nombre}</h4>
+                  {/* Imagen (si tienes) */}
+                  <img
+                    src={pieza.imagen || "default-image-url"}
+                    alt={pieza.Nombre}
+                    className="pieza-imagen"
+                  />
+                  <p>Nombre Pieza: {pieza.Nombre_Pieza || "No disponible"}</p>
+                  <p>Marca: {pieza.Nombre_Marca || "No disponible"}</p>
+                  <p>
+                    Distribuidor: {pieza.Nombre_Distribuidor || "No disponible"}
+                  </p>
+                </div>
+              ))}
+            </div>
           ) : (
             <p>No se encontraron piezas.</p>
           )}
